@@ -1,13 +1,81 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #7A52F4;
+    --color-secondary-yellow: #F4C952;
+    --color-secondary-pink: #F20089;
+    --color-dark: #000000;
+    --color-grey: #EBF0F0;
+    --color-grey-dark: #5D5D5B;
+    --color-grey-light: #CFDBD5;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .btn-filled {
+    @apply bg-primary text-white;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-[1px] border-grey-light text-primary;
+  }
+
+  .btn-transparent {
+    @apply bg-transparent border-none text-primary;
+  }
+
+  .btn-filled-resting {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), #7A52F4;
+    @apply text-primary;
+  }
+
+  .btn-outline-resting {
+    @apply bg-transparent border-[1px] border-grey-light text-black;
+  }
+
+  .btn-transparent-resting {
+    @apply bg-transparent border-none text-black;
+  }
+
+  .nav-link {
+    @apply after:transition after:ease-in-out after:duration-300 after:block after:content-[''] after:border-t-[3px] after:border-primary after:scale-0 after:hover:scale-100;
+
+  }
 }
