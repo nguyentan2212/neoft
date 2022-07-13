@@ -32,13 +32,15 @@ function Header() {
 
     return (
         <header className="px-8 pt-5 pb-6 flex flex-row shadow">
-            <img
-                className="rounded-full max-h-[40px]"
-                src={logo}
-                alt="logo"
-                height={40}
-                width={40}
-            />
+            <Link to="/">
+                <img
+                    className="rounded-full max-h-[40px]"
+                    src={logo}
+                    alt="logo"
+                    height={40}
+                    width={40}
+                />
+            </Link>
             <Input
                 className="ml-2 bg-grey w-[520px]"
                 placeholder="Search items, collections, and accounts"
@@ -50,7 +52,9 @@ function Header() {
                 {links &&
                     links.map((link, idx) => (
                         <Link
-                            className={`nav-link ${active === idx && "text-black"}`}
+                            className={`nav-link ${
+                                active === idx && "text-black"
+                            }`}
                             to={link.url}
                             key={idx}
                         >
@@ -58,7 +62,9 @@ function Header() {
                         </Link>
                     ))}
             </div>
-            <Button className="ml-9 btn-filled hover:btn-filled-resting">Create</Button>
+            <Button className="ml-9 btn-filled hover:btn-filled-resting">
+                Create
+            </Button>
             <IconButton
                 icon={
                     <Icon
@@ -66,15 +72,21 @@ function Header() {
                         width="18"
                     />
                 }
-                className="bg-white mx-2 btn-outline-resting hover:btn-outline"
+                className="mx-2 btn-outline-resting hover:btn-outline"
             />
-            {authenticated ? (<img
-                className="rounded-full"
-                src={user}
-                alt="user"
-                height={40}
-                width={40}
-            />) : (<Button className="btn-outline-resting hover:btn-outline">Sign In</Button>)}
+            {authenticated ? (
+                <img
+                    className="rounded-full"
+                    src={user}
+                    alt="user"
+                    height={40}
+                    width={40}
+                />
+            ) : (
+                <Button className="btn-outline-resting hover:btn-outline">
+                    Sign In
+                </Button>
+            )}
         </header>
     );
 }
