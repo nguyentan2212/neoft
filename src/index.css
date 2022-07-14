@@ -77,7 +77,7 @@
     }
 
     .btn-outline-resting {
-        @apply bg-transparent border-[1px] border-grey-light bg-white text-black;
+        @apply bg-transparent border-[1px] border-grey-light bg-transparent text-black;
     }
 
     .btn-transparent-resting {
