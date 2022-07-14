@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import FooterBar from "./FooterBar";
-import Button from "../Button";
 import IconButton from "../IconButton";
 
-function Footer({ showFooterBar = false }) {
+function Footer({ showFooterBar = true }) {
     return (
         <div>
             {showFooterBar && <FooterBar />}
